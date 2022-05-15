@@ -162,6 +162,11 @@ img {
 .image_block{
     margin:0;
 }
+
+.tomato_img_1{
+  max-height: 450px;
+  width:100%;
+}
 /*tomato imagestyles ends*/
 
 /*fresh_market styles starts*/
@@ -173,7 +178,7 @@ img {
 }
 .fresh_market{
     padding:50px 20px 25px 20px;
-    background-color:#fcf0f0 ;
+    background-color:#51cf94 ;
 }
 .fresh_market_title{
     font-family: 'Roboto Slab';
@@ -220,7 +225,7 @@ img {
 
 /*market cards styles statrs*/
 .market_cards{
-    background-color:#fcf0f0 ;
+    background-color:#51cf94 ;
     padding-bottom:50px;
 }
 
@@ -260,7 +265,7 @@ img {
 .fresh_market_line_text{
     padding: 0px 0px 47px 15px;
     margin-bottom: 0px;
-    background-color: #fcf0f0;
+    background-color: #51cf94;
 }
 .line_2::before{
     content: "";
@@ -305,18 +310,20 @@ img {
 }
 
 .tomato_cards{
-    background-color:#fcf0f0 ;
+    background-color:#51cf94 ;
     padding-left:20px;
     padding-right: 20px;
 }
 .card_text_wrap{
-    
     background-color: #fff;
     text-align: center;
     position:absolute;
-    bottom:0;
+    right:0;
     left:0;
+    bottom:0;
     padding:10px 0px;
+    display: block;
+    
     
 }
 

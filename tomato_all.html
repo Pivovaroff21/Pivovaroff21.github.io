@@ -57,11 +57,11 @@
         </header>
       </div>
       <div class="image_block">
-        <img src="./images/tomato_all-1.jpg" alt="tomatoes" class="tomato_img_1">
+        <img src="./vue_img/pepper-bg.jpg" styles="max-height:400px;" alt="tomatoes" class="tomato_img_1">
       </div> 
       <section class="fresh_market">
         <div class="wrapper">
-          <h1 class="fresh_market_title">Agridera Fresh Market Tomato Hybrids</h1>
+          <h1 class="fresh_market_title">Agridera Fresh Market Pepper Hybrids</h1>
           <p class="stars">*****</p>
           <p class="fresh_market_text">Agridera aims to be one of the world's leading companies in the breeding, production, and marketing of tomato seeds. <strong>We invest intensively in research and development to provide solutions to growers and consumers in numerous countries around the world.</strong>
             In particular, we breed improved disease-resistant cultivars adapted to different markets globally.</p>
@@ -70,7 +70,7 @@
           <p class="fresh_market_line_text line">Agirdera Tomato breeding programs are focusing on three main segments: Greenhouse Indeterminate Tomatoes, Open-field Indeterminate Tomatoes, and Bush Type Open-field Tomatoes.</p>
         </div>
       </section>
-      <section class="market_cards">
+      <section class="market_cards"  >
         <div class="wrapper_market_cards">
           <div class="row" >
               <div class="col-md-4 ">
@@ -88,117 +88,30 @@
           </div>
         </div>
       </section>
-
-      <section class="tomato_cards">
+      <section class="tomato_cards" id="article">
         <div class="wrapper">
           <p class="fresh_market_line_text line_2"><strong>Agridera operates through international and local distributers around the world. </strong></p>
           <div class="row" >
-           
-            <div class="col-xl-4 tm_card">
+      
+            <div class="col-xl-4 tm_card" v-if="products" v-for="p in products">
               <a href="tomato_one.html" class="card_link">
                 <div class="img_wrap">
-                  <img src="./images/tomato_cards-img-1.png" alt="tomato" class="tomato_cards_img">
+                  <img :src="'./vue_img/'+p.image" alt="pepper-image" >
                   <div class="card_text_wrap">
-                    <h3 class="tomato_cards_title"><strong>TAG 1000 (TAG 853)</strong></h3>
-                    <p class="tomato_cards_text">Tomato Determinate Red Standard Round</p>
-                  </div>
-                </div>
-              </a>
-            
-            </div>
-          
-            <div class="col-xl-4 tm_card">
-              <a href="tomato_one.html" class="card_link">
-                <div class="img_wrap">
-                  <img src="./images/tomato_cards-img-2.png" alt="tomato" class="tomato_cards_img">
-                  <div class="card_text_wrap">
-                    <h3 class="tomato_cards_title"><strong>TAG 1000 (TAG 853)</strong></h3>
-                    <p class="tomato_cards_text">Tomato Determinate Red Standard Round</p>
-                  </div>
-                </div>
-              </a>  
-            </div>
-            <div class="col-xl-4 tm_card">
-              <a href="tomato_one.html" class="card_link">
-                <div class="img_wrap">
-                  <img src="./images/tomato_cards-img-3.png" alt="tomato" class="tomato_cards_img">
-                  <div class="card_text_wrap">
-                    <h3 class="tomato_cards_title"><strong>TAG 1000 (TAG 853)</strong></h3>
-                    <p class="tomato_cards_text">Tomato Determinate Red Standard Round</p>
+                    <h3 class="tomato_cards_title"><strong>{{p.title}}</strong></h3>
+                    <p class="tomato_cards_text">{{p.short_text}}</p>
                   </div>
                 </div>
               </a>
             </div>
-          </div>
-
-          <div class="row">
-            <div class="col-xl-4 tm_card">
-              <a href="tomato_one.html" class="card_link">
-                <div class="img_wrap">
-                  <img src="./images/tomato_cards-img-1.png" alt="tomato" class="tomato_cards_img">
-                  <div class="card_text_wrap">
-                    <h3 class="tomato_cards_title"><strong>TAG 1000 (TAG 853)</strong></h3>
-                    <p class="tomato_cards_text">Tomato Determinate Red Standard Round</p>
-                  </div>
-                </div>
-              </a>  
-            </div>
-            <div class="col-xl-4 tm_card">
-              <div class="img_wrap">
-                <a href="tomato_one.html" class="card_link">
-                  <img src="./images/tomato_cards-img-2.png" alt="tomato" class="tomato_cards_img">
-                  <div class="card_text_wrap">
-                    <h3 class="tomato_cards_title"><strong>TAG 1000 (TAG 853)</strong></h3>
-                    <p class="tomato_cards_text">Tomato Determinate Red Standard Round</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-xl-4 tm_card">
-              <a href="tomato_one.html" class="card_link">
-                <div class="img_wrap">
-                  <img src="./images/tomato_cards-img-3.png" alt="tomato" class="tomato_cards_img">
-                  <div class="card_text_wrap">
-                    <h3 class="tomato_cards_title"><strong>TAG 1000 (TAG 853)</strong></h3>
-                    <p class="tomato_cards_text">Tomato Determinate Red Standard Round</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-xl-4 tm_card_last">
-              <a href="tomato_one.html" class="card_link">
-                <div class="img_wrap">
-                  <img src="./images/tomato_cards-img-1.png" alt="tomato" class="tomato_cards_img">
-                  <div class="card_text_wrap">
-                    <h3 class="tomato_cards_title"><strong>TAG 1000 (TAG 853)</strong></h3>
-                    <p class="tomato_cards_text">Tomato Determinate Red Standard Round</p>
-                  </div>
-                </div>
-              </a>
-              
-            </div>
-            <div class="col-xl-4 tm_card_last last">
-              <a href="tomato_one.html" class="card_link">
-                <div class="img_wrap">
-                  <img src="./images/tomato_cards-img-2.png" alt="tomato" class="tomato_cards_img">
-                  <div class="card_text_wrap">
-                    <h3 class="tomato_cards_title"><strong>TAG 1000 (TAG 853)</strong></h3>
-                    <p class="tomato_cards_text">Tomato Determinate Red Standard Round</p>
-                  </div>
-                </a>    
-              </div>
-            </div>
-           
-          </div>
         </div>
-        </section>
+      </section>
 
 
 
 
+
+     
 
 
 
@@ -296,5 +209,7 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
 </html>
