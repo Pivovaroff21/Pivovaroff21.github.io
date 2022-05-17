@@ -170,7 +170,11 @@ header{
 }
 
 /*header styles ends*/
-
+/* lcarts styles start*/
+.thumb_img{
+  width:25px;
+  height:25px;
+}
 /*contact styles starts*/
 .contact{
     background: #f7f7f7;
@@ -348,6 +352,7 @@ header{
     max-width: 300px;
     margin:0px auto 44px auto;
 }
+
 
 
 

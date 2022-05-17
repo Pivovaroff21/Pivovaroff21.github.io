@@ -55,63 +55,82 @@
       </div>   
     </header>
     <img src="./images/contact_us-img.jpg" alt="field" class="main_img">
-    <section class="contact">
+    <section class="contact" id="article">
       <div class="wrapper">
         <h1 class="contact_title">Contact us</h1>
         <p class="stars">*****</p>
-        <form action="/" method="">
+        <div class="row" >
+          <div class="col-md-2" v-if="cart_arr" v-for="p in cart_arr" >
+            <img :src="'./vue_img/'+p.image" alt="l_image" class="l_image">
+            <div class="lcart_title">
+              <strong>{{p.title}}</strong>
+            </div>
+            <div class="lcart_short_text">
+              {{p.short_text}}
+            </div>
+            
+            <button class="thumb"
+              @click="() => removeCart(p.id)"
+            >
+              <img src="./images/x.svg" alt="x" class="thumb_img">
+            </button>
+          </div>
+        </div>
+        <form action="#" method="post" 
+         v-on:submit.prevent="makeOrder"
+         v-if="formDataVisible" >
           <div class="columns">
 
             <div class="contact_column">
               <div class="label_wrap">
-                <label for="" class="contact_cap">Name*</label>
+                <label class="contact_cap"  >Name* </label>
               </div>
               <div class="input_wrap">
-                <input type="text" name="name" class="contact_input">
+                <input type="text" name="name" class="contact_input" required  v-model= "contactFields.name" >
               </div>
               <div class="label_wrap">
-                <label for="" class="contact_cap">Company Name</label>
+                <label class="contact_cap">Company Name</label>
               </div>
               <div class="input_wrap">
-                <input type="text" name="copmany_name" class="contact_input">
+                <input type="text" name="copmany_name" class="contact_input" v-model= "contactFields.company_name">
               </div>
               <div class="label_wrap">
-                <label for="" class="contact_cap">Position</label>
+                <label  class="contact_cap">Position</label>
               </div>
               <div class="input_wrap">
-                <input type="text" name="Position" class="contact_input">
+                <input type="text" name="Position" class="contact_input" v-model= "contactFields.position">
               </div>
               <div class="label_wrap">
-                <label for="" class="contact_cap">City</label>
+                <label  class="contact_cap">City</label>
               </div>
               <div class="input_wrap">
-                <input type="text" name="City" class="contact_input">
+                <input type="text" name="City" class="contact_input" v-model= "contactFields.city">
               </div>
               <div class="label_wrap">
-                <label for="" class="contact_cap">Country</label>
+                <label  class="contact_cap">Country</label>
               </div>
               <div class="input_wrap">
-                <input type="text" name="Country" class="contact_input">
+                <input type="text" name="Country" class="contact_input" v-model= "contactFields.country">
               </div>
               <div class="label_wrap">
-                <label for="" class="contact_cap">Telephone</label>
+                <label class="contact_cap">Telephone</label>
               </div>
               <div class="input_wrap">
-                <input type="text" name="Telephone" class="contact_input">
+                <input type="text" name="Telephone" class="contact_input" v-model= "contactFields.phone">
               </div>
               <div class="label_wrap">
-                <label for="" class="contact_cap">Email*</label>
+                <label for="" class="contact_cap" >Email*</label>
               </div>
               <div class="input_wrap">
-                <input type="email" name="Email" class="contact_input">
+                <input type="email" name="Email" class="contact_input" required v-model= "contactFields.email">
               </div>
             </div>
-
+            
             <div class="contact_column_sec">
               <div class="label_wrap">
                 <label for="" class="contact_cap">You are a</label>
               </div>
-              <select class="select_input" name="cars">
+              <select class="select_input" name="cars" v-model= "contactFields.work">
                 <option value="seed">seed producer</option>
                 <option value="manager">manager</option>
                 <option value="person">person</option>
@@ -119,22 +138,73 @@
               <div class="label_wrap">
                 <label for="" class="contact_cap">If other, please specify</label>
               </div>
-                <input type="text" name="copmany_name" class="sec_name">
+                <input type="text" name="copmany_name" class="sec_name" v-model= "contactFields.other">
               <div class="label_wrap">
                 <label for="" class="contact_cap">You are interested in</label>
               </div>
-              <textarea type="text" name="Position" class="sec_textarea"></textarea>
+              <textarea type="text" name="Position" class="sec_textarea" v-model= "contactFields.interest"></textarea>
               <div class="label_wrap">
                 <label for="" class="contact_cap">Please type this code</label>
               </div>
               <div class="contact_code">
                 <img src="./images/contact_us-code-img.png" alt="code" class="contact_img">
                   <input type="text" name="City" class="code_input">
-                  <button type="submit"class="message_button">Send Message</button>
+                  <button 
+                  type="submit"
+                  class="message_button" 
+                  v-if="formDataVisible"
+                  >Send Message</button>
               </div>
             </div>
           </div>
         </form>
+        <div class="form_data" v-if="!formDataVisible">
+          <div class="columns">
+
+            <div class="contact_column">
+              <div class="label_wrap">
+                <div class="contact_cap"  >Name: {{contactFields.name}}</div>
+              </div>
+              <div class="label_wrap">
+                <div class="contact_cap">Company Name: {{contactFields.company_name}}</div>
+              </div>
+              
+              <div class="label_wrap">
+                <div  class="contact_cap">Position: {{contactFields.position}}</div>
+              </div>
+             
+              <div class="label_wrap">
+                <div  class="contact_cap">City: {{contactFields.city}}</div>
+              </div>
+              
+              <div class="label_wrap">
+                <div  class="contact_cap">Country: {{contactFields.country}}</div>
+              </div>
+              
+              <div class="label_wrap">
+                <div class="contact_cap">Telephone: {{contactFields.phone}}</div>
+              </div>
+              
+              <div class="label_wrap">
+                <div class="contact_cap" >Email: {{contactFields.email}}</div>
+              </div>
+              
+            </div>
+            
+            <div class="contact_column_sec">
+              <div class="label_wrap">
+                <div class="contact_cap">You are a: {{contactFields.work}}</div>
+              </div>
+              
+              <div class="label_wrap">
+                <div class="contact_cap">If other, please specify: {{contactFields.other}}</div>
+              </div>
+                
+              <div class="label_wrap">
+                <div class="contact_cap">You are interested in:  {{contactFields.interest}}</div>
+              </div>
+              
+        </div>
       </div>
     </section>       
     <section class="adress">
@@ -203,5 +273,6 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
