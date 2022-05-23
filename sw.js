@@ -1,7 +1,7 @@
 self.addEventListener('install', function(event) {
     console.log('[Service Worker] Installing Service Worker ...', event);
     event.waitUntil(
-        caсhes.open("static")
+        caches.open("static")
             .then(function(cache) {
                 console.log("precaching");
                 cache.add("/index.html");
@@ -16,7 +16,7 @@ self.addEventListener('install', function(event) {
 
   self.addEventListener('fetch', function(event) {
     event.respondWith(
-        caсhes.match(event.request)
+        caches.match(event.request)
         .then(function(response){
             if (response)
                 return response;
