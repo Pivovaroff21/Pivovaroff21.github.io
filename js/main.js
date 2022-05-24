@@ -124,3 +124,22 @@ new Vue({
     }
   },
 });
+
+navigator.serviceWorker.ready.then(registration =>{
+  if ('PushManager' in window){
+    const push_btn = document.getElementById('push');
+      push_btn.addEventListener('click', () => {
+        console.log(1);
+        // true, если нажата OK    
+        /*let retVal = confirm("Do you want to continue ?");
+        if( retVal == true ) {
+           document.write ("Push notifications enabled");
+           askPermission()
+           return true;
+        } else {
+           document.write ("Push notifications arent allowed");
+           return false;
+        }    */
+      });
+  }
+});
